@@ -23,5 +23,4 @@ const login = () => {
 	const redirectPath = route.query.redirect || "/protected";
 	router.push(redirectPath);
 };
-return { username, password, login };
 </script>

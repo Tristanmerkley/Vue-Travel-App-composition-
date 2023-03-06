@@ -31,11 +31,11 @@ import sourceData from "@/data.json";
 import ExperienceCard from "@/components/ExperienceCard.vue";
 import GoBack from "@/components/GoBack.vue";
 import { computed } from "vue";
-const destination = () => {
+const destination = computed(() => {
 	return sourceData.destinations.find(
 		(destination) => destination.id === props.id
 	);
-};
+});
 const props = defineProps({
 	id: { type: Number, required: true },
 });

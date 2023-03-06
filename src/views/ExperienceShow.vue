@@ -9,19 +9,16 @@
 import sourceData from "@/data.json";
 import { computed } from "vue";
 
-const destination = computed(() => {
-	return sourceData.destinations.find(
-		(destination) => destination.id === this.id
-	);
-});
 const experience = computed(() => {
-	return this.destination.experiences.find(
-		(experience) => experience.slug === this.experienceSlug
+	const destination = sourceData.destinations.find(
+		(destination) => destination.id === props.id
+	);
+	return destination.experiences.find(
+		(experience) => experience.slug === props.experienceSlug
 	);
 });
 const props = defineProps({
 	id: { type: Number, required: true },
 	experienceSlug: { type: String, required: true },
-	v,
 });
 </script>
